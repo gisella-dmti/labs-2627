@@ -32,8 +32,8 @@ session_start();
           <input type="text" name="fullname" placeholder="John Doe">
           
           <label>Birthdate</label>
-          <input type="date" name="birthdate">
-
+          <input type="text" value="June 15, 2001" readonly>
+            
           <label>Contact Number</label>
           <input type="text" name="contact_number" placeholder="+639123456789" />
             
