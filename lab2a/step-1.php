@@ -32,7 +32,7 @@ session_start();
           <input type="text" name="fullname" placeholder="John Doe">
           
           <label>Birthdate</label>
-          <input type="text" value="<?= $formattedBirthday ?>" readonly>
+          <input type="date" name="birthdate">
 
           <label>Contact Number</label>
           <input type="text" name="contact_number" placeholder="+639123456789" />
