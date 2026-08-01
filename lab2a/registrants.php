@@ -1,6 +1,6 @@
 <?php
-$file = fopen(__DIR__ . "/registrations.csv", "a");
-
+$file = fopen(__DIR__ . "/registrations.csv", "r");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,14 +37,16 @@ $file = fopen(__DIR__ . "/registrations.csv", "a");
 </tr>
 
 <?php
-while (($row = fgetcsv($file)) !== false) {
-    echo "<tr>";
-    foreach ($row as $cell) {
-        echo "<td>" . htmlspecialchars($cell) . "</td>";
+if ($file) {
+    while (($row = fgetcsv($file)) !== false) {
+        echo "<tr>";
+        foreach ($row as $cell) {
+            echo "<td>" . htmlspecialchars($cell) . "</td>";
+        }
+        echo "</tr>";
     }
-    echo "</tr>";
+    fclose($file);
 }
-fclose($file);
 ?>
 
 </table>
