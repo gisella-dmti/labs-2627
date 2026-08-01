@@ -3,6 +3,13 @@
 require "helpers/helper-functions.php";
 
 session_start();
+echo "<pre>DEBUG SESSION: ";
+print_r($_SESSION);
+echo "</pre>";
+
+echo "File path being used: " . __DIR__ . "/registrations.csv<br>";
+echo "File exists: " . (file_exists(__DIR__ . "/registrations.csv") ? "YES" : "NO") . "<br>";
+echo "File writable: " . (is_writable(__DIR__ . "/registrations.csv") ? "YES" : "NO") . "<br>";
 
 if (
     empty($_POST['email']) ||
