@@ -82,7 +82,7 @@ The dataset is retrieved from this URL <a href="https://www.datablist.com/learn/
     ?>
     </tbody>
 </table>
-    <p>
+   <p>
     <strong>Execution Time:</strong>
     <?php echo $execution_time; ?> seconds
 </p>
