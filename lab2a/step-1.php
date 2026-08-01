@@ -36,7 +36,19 @@ session_start();
 
           <label>Password</label>
           <input type="password" name="password" placeholder="******" autocomplete="current-password">
+          
+          <label>Birthdate</label>
+          <input type="date" name="birthdate">
 
+          
+            
+          <label>Sex</label>
+          <br />
+          <input type="radio" name="sex" value="male" checked="checked">Male
+          <br />
+          <input type="radio" name="sex" value="female">Female
+          <br />
+            
           <button type="submit">Next</button>
         </fieldset>
 
