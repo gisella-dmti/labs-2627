@@ -4,6 +4,15 @@ require "helpers/helper-functions.php";
 
 session_start();
 
+if (
+    empty($_POST['email']) ||
+    empty($_POST['password']) ||
+    !isset($_POST['agree'])
+) {
+    header("Location: step3.php");
+    exit();
+}
+
 $birthDate = new DateTime($_SESSION['birthdate']);
 $today = new DateTime();
 
