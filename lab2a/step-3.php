@@ -4,6 +4,14 @@ require "helpers/helper-functions.php";
 
 session_start();
 
+if (
+    empty($_POST['program']) ||
+    empty($_POST['address'])
+) {
+    header("Location: step2.php");
+    exit();
+}
+
 $program = $_POST['program'];
 $address = $_POST['address'];
 
