@@ -33,7 +33,7 @@ $form_data = $_SESSION;
 $file = fopen(__DIR__ . "/registrations.csv", "a") or die("Cannot open registrations.csv");
 error_log("File opened, about to write: " . print_r($_SESSION, true));
 
-fputcsv($file, [
+$result = fputcsv($file, [
     $_SESSION['fullname'],
     date("F d, Y", strtotime($_SESSION['birthdate'])),
     $_SESSION['age'],
@@ -43,6 +43,7 @@ fputcsv($file, [
     $_SESSION['address'],
     $_SESSION['email']
 ]);
+error_log("fputcsv returned: " . var_export($result, true));
 
 fclose($file);
 
