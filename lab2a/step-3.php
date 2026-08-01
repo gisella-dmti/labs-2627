@@ -8,7 +8,7 @@ if (
     empty($_POST['program']) ||
     empty($_POST['address'])
 ) {
-    header("Location: step2.php");
+    header("Location: step-2.php");
     exit();
 }
 
