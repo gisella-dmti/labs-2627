@@ -30,6 +30,21 @@ $_SESSION['agree'] = $agree;
 
 $form_data = $_SESSION;
 
+$file = fopen("registrations.csv", "a");
+
+fputcsv($file, [
+    $_SESSION['fullname'],
+    date("F d, Y", strtotime($_SESSION['birthdate'])),
+    $_SESSION['age'],
+    $_SESSION['contact_number'],
+    $_SESSION['sex'],
+    $_SESSION['program'],
+    $_SESSION['complete_address'],
+    $_SESSION['email']
+]);
+
+fclose($file);
+
 dump_session();
 
 session_destroy();
