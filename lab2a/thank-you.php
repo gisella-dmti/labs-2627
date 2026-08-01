@@ -28,20 +28,27 @@ $_SESSION['agree'] = $agree;
 
 $form_data = $_SESSION;
 
-$file = fopen("registrations.csv", "a") or die("Cannot open registrations.csv");
+if (empty($_SESSION['fullname']) || empty($_SESSION['birthdate']) || empty($_SESSION['email'])) {
+    die("Incomplete registration data. Please start over from step 1.");
+}
 
-fputcsv($file, [
-    $_SESSION['fullname'],
-    date("F d, Y", strtotime($_SESSION['birthdate'])),
-    $_SESSION['age'],
-    $_SESSION['contact_number'],
-    $_SESSION['sex'],
-    $_SESSION['program'],
-    $_SESSION['address'],
-    $_SESSION['email']
-]);
+if (!isset($_SESSION['submitted'])) {
+    $file = fopen(__DIR__ . "/registrations.csv", "a") or die("Cannot open registrations.csv");
 
-fclose($file);
+    fputcsv($file, [
+        $_SESSION['fullname'],
+        date("F d, Y", strtotime($_SESSION['birthdate'])),
+        $_SESSION['age'],
+        $_SESSION['contact_number'],
+        $_SESSION['sex'],
+        $_SESSION['program'],
+        $_SESSION['address'],
+        $_SESSION['email']
+    ]);
+
+    fclose($file);
+    $_SESSION['submitted'] = true;
+}
 dump_session();
 
 session_destroy();
