@@ -4,12 +4,10 @@ require "helpers/helper-functions.php";
 
 session_start();
 
-$birthdate = $_POST['birthdate'];
-$sex = $_POST['sex'];
+$program = $_POST['program'];
 $address = $_POST['address'];
 
-$_SESSION['birthdate'] = $birthdate;
-$_SESSION['sex'] = $sex;
+$_SESSION['program'] = $program;
 $_SESSION['address'] = $address;
 
 dump_session();
