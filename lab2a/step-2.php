@@ -10,7 +10,7 @@ if (
     empty($_POST['contact_number']) ||
     empty($_POST['sex'])
 ) {
-    header("Location: step1.php");
+    header("Location: step-1.php");
     exit();
 }
 
