@@ -42,7 +42,7 @@ if (empty($_SESSION['fullname']) || empty($_SESSION['birthdate']) || empty($_SES
 if (!isset($_SESSION['submitted'])) {
     $file = fopen(__DIR__ . "/registrations.csv", "a") or die("Cannot open registrations.csv");
 
-    fputcsv($file, [
+    $result = fputcsv($file, [
         $_SESSION['fullname'],
         date("F d, Y", strtotime($_SESSION['birthdate'])),
         $_SESSION['age'],
@@ -53,8 +53,16 @@ if (!isset($_SESSION['submitted'])) {
         $_SESSION['email']
     ]);
 
+    echo "fputcsv result: ";
+    var_dump($result);
+
     fclose($file);
     $_SESSION['submitted'] = true;
+
+    echo "submitted flag set: ";
+    var_dump($_SESSION['submitted']);
+} else {
+    echo "SKIPPED WRITE — submitted flag was already set!";
 }
 dump_session();
 
