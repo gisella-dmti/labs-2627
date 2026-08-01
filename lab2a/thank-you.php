@@ -30,8 +30,7 @@ $_SESSION['agree'] = $agree;
 
 $form_data = $_SESSION;
 
-$file = fopen("registrations.csv", "a") or die("Cannot open registrations.csv");
-
+$file = fopen(__DIR__ . "/registrations.csv", "a");
 fputcsv($file, [
     $_SESSION['fullname'],
     date("F d, Y", strtotime($_SESSION['birthdate'])),
