@@ -3,13 +3,6 @@
 require "helpers/helper-functions.php";
 
 session_start();
-echo "<pre>DEBUG SESSION: ";
-print_r($_SESSION);
-echo "</pre>";
-
-echo "File path being used: " . __DIR__ . "/registrations.csv<br>";
-echo "File exists: " . (file_exists(__DIR__ . "/registrations.csv") ? "YES" : "NO") . "<br>";
-echo "File writable: " . (is_writable(__DIR__ . "/registrations.csv") ? "YES" : "NO") . "<br>";
 
 if (
     empty($_POST['email']) ||
@@ -35,14 +28,10 @@ $_SESSION['agree'] = $agree;
 
 $form_data = $_SESSION;
 
-if (empty($_SESSION['fullname']) || empty($_SESSION['birthdate']) || empty($_SESSION['email'])) {
-    die("Incomplete registration data. Please start over from step 1.");
-}
-
 if (!isset($_SESSION['submitted'])) {
     $file = fopen(__DIR__ . "/registrations.csv", "a") or die("Cannot open registrations.csv");
 
-    $result = fputcsv($file, [
+    fputcsv($file, [
         $_SESSION['fullname'],
         date("F d, Y", strtotime($_SESSION['birthdate'])),
         $_SESSION['age'],
@@ -53,16 +42,8 @@ if (!isset($_SESSION['submitted'])) {
         $_SESSION['email']
     ]);
 
-    echo "fputcsv result: ";
-    var_dump($result);
-
     fclose($file);
     $_SESSION['submitted'] = true;
-
-    echo "submitted flag set: ";
-    var_dump($_SESSION['submitted']);
-} else {
-    echo "SKIPPED WRITE — submitted flag was already set!";
 }
 dump_session();
 
