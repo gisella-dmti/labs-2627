@@ -4,6 +4,13 @@ require "helpers/helper-functions.php";
 
 session_start();
 
+$birthDate = new DateTime($_SESSION['birthdate']);
+$today = new DateTime();
+
+$age = $birthDate->diff($today)->y;
+
+$_SESSION['age'] = $age;
+
 $email = $_POST['email'];
 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 $agree = $_POST['agree'];
