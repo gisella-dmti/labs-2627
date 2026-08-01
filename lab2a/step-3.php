@@ -37,18 +37,11 @@ dump_session();
         <form action="thank-you.php" method="POST">
 
           <fieldset>
-            <label>Contact Number</label>
-            <input type="text" name="contact_number" placeholder="+639123456789" />
+            <label>Email address</label>
+            <input type="email" name="email" placeholder="example@canonical.com" autocomplete="email">
 
-            <label>Program</label>
-            <select name="program">
-              <option disabled="disabled" selected="">Select an option</option>
-              <option value="cs">Computer Science</option>
-              <option value="it">Information Technology</option>
-              <option value="is">Information Systems</option>
-              <option value="se">Software Engineering</option>
-              <option value="ds">Data Science</option>
-            </select>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="******" autocomplete="current-password">
 
             <label class="p-checkbox--inline">
             <input type="checkbox" name="agree">
