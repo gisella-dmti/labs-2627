@@ -4,6 +4,16 @@ require "helpers/helper-functions.php";
 
 session_start();
 
+if (
+    empty($_POST['fullname']) ||
+    empty($_POST['birthdate']) ||
+    empty($_POST['contact_number']) ||
+    empty($_POST['sex'])
+) {
+    header("Location: step1.php");
+    exit();
+}
+
 $fullname = $_POST['fullname'];
 $birthdate = $_POST['birthdate'];
 $contact_number = $_POST['contact_number'];
