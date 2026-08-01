@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 $file = fopen("registrations.csv", "a");
 
 $data = [
