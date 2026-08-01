@@ -67,7 +67,12 @@ session_destroy();
                 <tr>
                     <th><?php echo $key; ?></th>
                     <td>
-                      <?php echo $val; ?>
+                      <?php if ($key == "birthdate") {
+                            echo date("F d, Y", strtotime($val));
+                            } else {
+                            echo $val;
+                            }
+                            ?>
                     </td>
                 </tr>
             <?php
