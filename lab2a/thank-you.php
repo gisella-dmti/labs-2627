@@ -39,7 +39,7 @@ fputcsv($file, [
     $_SESSION['contact_number'],
     $_SESSION['sex'],
     $_SESSION['program'],
-    $_SESSION['complete_address'],
+    $_SESSION['address'],
     $_SESSION['email']
 ]);
 
