@@ -1,18 +1,1 @@
-<?php
-session_start();
 
-$file = fopen("registrations.csv", "a");
-
-$data = [
-    $_SESSION['fullname'],
-    $_SESSION['birthdate'],
-    $_SESSION['age'],
-    $_SESSION['contact'],
-    $_SESSION['sex'],
-    $_SESSION['program'],
-    $_SESSION['address'],
-    $_SESSION['email']
-];
-fputcsv($file, $data);
-fclose($file);
-?>
