@@ -9,7 +9,7 @@ if (
     empty($_POST['password']) ||
     !isset($_POST['agree'])
 ) {
-    header("Location: step3.php");
+    header("Location: step-3.php");
     exit();
 }
 
