@@ -1,6 +1,5 @@
 <?php
-$file = fopen("registrations.csv", "r");
-?>
+$file = fopen(__DIR__ . "/registrations.csv", "a");
 
 <!DOCTYPE html>
 <html>
