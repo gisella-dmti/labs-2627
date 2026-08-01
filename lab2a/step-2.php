@@ -5,13 +5,17 @@ require "helpers/helper-functions.php";
 session_start();
 
 $fullname = $_POST['fullname'];
-$email = $_POST['email'];
-# Encrypt the password first before saving it to the Session Variables
-$password = $_POST['password'];
+$birthdate = $_POST['birthdate'];
+$contact_number = $_POST['contact_number'];
+$sex = $_POST['sex'];
+
 
 $_SESSION['fullname'] = $fullname;
-$_SESSION['email'] = $email;
-$_SESSION['password'] = $password;
+$_SESSION['birthdate'] = $birthdate;
+$_SESSION['contact_number'] = $contact_number;
+$_SESSION['sex'] = $sex;
+
+
 
 dump_session();
 
