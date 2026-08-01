@@ -3,6 +3,7 @@
 require "helpers/helper-functions.php";
 
 session_start();
+session_unset();
 ?>
 <html>
 <head>
