@@ -25,6 +25,28 @@ for ($i = 0; $i < MAX_QUESTION_NUMBER; $i++) {
 
 // Compute the score
 $score = compute_score($complete_answers);
+
+$questions = retrieve_questions();
+$correct_answers = $questions['answers'];
+
+function get_answer_text($options, $answer_key) {
+
+    if ($answer_key === '') {
+        return 'No answer';
+    }
+
+    foreach ($options as $option) {
+
+        if ($option['key'] === $answer_key) {
+            return $option['value'];
+        }
+
+    }
+
+    return 'Unknown answer';
+}
+?>
+<html>
 ?>
 <html>
 <head>
@@ -82,9 +104,6 @@ $score = compute_score($complete_answers);
         <tbody>
 
             <?php
-            $questions = retrieve_questions();
-            $correct_answers = $questions['answers'];
-
             foreach ($questions['questions'] as $question_number => $question):
             ?>
 
@@ -96,14 +115,20 @@ $score = compute_score($complete_answers);
 
                     <td>
                         <?php
-                        echo $complete_answers[$question_number] ?: 'No answer';
+                            echo get_answer_text(
+                            $question['options'],
+                            $complete_answers[$question_number]
+                            );
                         ?>
                     </td>
 
-                    <td>
+                     <td>
                         <?php
-                        echo $correct_answers[$question_number] ?? '';
-                        ?>
+                            echo get_answer_text(
+                            $question['options'],
+                            $correct_answers[$question_number] ?? ''
+                            );
+                          ?>
                     </td>
 
                 </tr>
