@@ -59,7 +59,7 @@ $options = get_options_for_question_number($current_question_number);
         -->
 
         <!-- Display the options -->
-        <?php foreach ($answers as $answer): ?>
+        <?php foreach ($options as $option): ?>
         <div class="field">
             <div class="control">
                 <label class="radio">
