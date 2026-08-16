@@ -1,6 +1,12 @@
 <?php
 # from the $_SERVER global variable, check if the HTTP method used is POST, if its not POST, redirect to the index.php page
 # Reference: https://www.php.net/manual/en/reserved.variables.server.php
+$first_name = explode(' ', trim($complete_name))[0];
+?>
+
+<div class="notification is-info">
+    Hello <?php echo htmlspecialchars($first_name); ?>, please read the instructions first.
+</div>
 
 // Supply the missing code
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -34,15 +40,23 @@ $contact_number = $_POST['contact_number'];
  <input type="hidden" name="contact_number" value="<?php echo $contact_number; ?>" />
         <!-- Display the instruction -->
         <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Please read each question carefully and select the best answer.
+                Answer all questions before submitting the quiz.
+                You have 60 seconds to complete the quiz.
+                Your quiz will be submitted automatically when the time expires.
         </p>
+       <div class="field">
+    <label class="label">Terms and Conditions</label>
 
-        <div class="field">
-            <label class="label">Terms and conditions</label>
-            <div class="control">
-                <textarea class="textarea" placeholder="Textarea">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
-            </div>
-        </div>
+    <div class="box">
+        <p>
+            By starting the quiz, you agree to answer the questions honestly
+            and follow the quiz instructions. Your answers will be used to
+            calculate your quiz score. The quiz will automatically submit
+            when the 60-second time limit expires.
+        </p>
+    </div>
+</div>
 
         <div class="field">
             <div class="control">
