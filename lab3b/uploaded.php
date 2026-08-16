@@ -70,6 +70,7 @@ if (isset($_FILES['pdf_file']) &&
 
 }
 
+
 if (isset($_FILES['image_file']) &&
     $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
 
@@ -193,5 +194,4 @@ if (isset($_FILES['audio_file']) &&
     echo '<p>No audio file was uploaded.</p>';
 
 }
-
 ?>
