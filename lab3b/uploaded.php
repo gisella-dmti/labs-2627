@@ -1,7 +1,10 @@
 <?php
 
 $upload_directory = getcwd() . '/uploads/';
-
+echo '<pre>';
+var_dump($_FILES);
+echo '</pre>';
+exit;
 
 // =========================
 // Handle Text File
