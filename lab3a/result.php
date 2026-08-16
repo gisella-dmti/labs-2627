@@ -93,13 +93,14 @@ function get_answer_text($options, $answer_key) {
     <div class="table-container">
     <table class="table is-bordered is-hoverable is-fullwidth">
 
-        <thead>
-            <tr>
-                <th>Question</th>
-                <th>Your Answer</th>
-                <th>Correct Answer</th>
-            </tr>
-        </thead>
+       <thead>
+         <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+            <th>Result</th>
+        </tr>
+    </thead>
 
         <tbody>
 
@@ -109,17 +110,17 @@ function get_answer_text($options, $answer_key) {
 
                 <tr>
 
-                    <td>
-                        <?php echo $question_number + 1; ?>
-                    </td>
+                   <td>
+            <?php
+            $user_answer = $complete_answers[$question_number] ?? '';
+             $correct_answer = $correct_answers[$question_number] ?? '';
 
-                    <td>
-                        <?php
-                            echo get_answer_text(
-                            $question['options'],
-                            $complete_answers[$question_number]
-                            );
-                        ?>
+            if ($user_answer !== '' && $user_answer === $correct_answer) {
+                echo 'Correct';
+            } else {
+                 echo 'Incorrect';
+            }
+            ?>
                     </td>
 
                      <td>
