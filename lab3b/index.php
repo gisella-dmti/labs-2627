@@ -36,59 +36,74 @@
 
         <h4>File Upload</h4>
 
-        <form
-            action="uploaded.php"
-            method="POST"
-            enctype="multipart/form-data">
+<form
+    action="uploaded.php"
+    method="POST"
+    enctype="multipart/form-data">
 
-            <!-- TEXT FILE -->
+    <!-- TEXT FILE -->
+    <div class="p-card">
+        <h3>Text File</h3>
+        <p class="p-card__content">
+            <input
+                type="file"
+                name="text_file"
+                accept=".txt">
+        </p>
+    </div>
 
-            <div class="p-card">
+    <!-- PDF FILE -->
+    <div class="p-card">
+        <h3>PDF File</h3>
+        <p class="p-card__content">
+            <input
+                type="file"
+                name="pdf_file"
+                accept=".pdf">
+        </p>
+    </div>
 
-                <h3>Text File</h3>
+    <!-- AUDIO FILE -->
+    <div class="p-card">
+        <h3>Audio File</h3>
+        <p class="p-card__content">
+            <input
+                type="file"
+                name="audio_file"
+                accept=".mp3">
+        </p>
+    </div>
 
-                <p class="p-card__content">
+    <!-- IMAGE FILE -->
+    <div class="p-card">
+        <h3>Image File</h3>
+        <p class="p-card__content">
+            <input
+                type="file"
+                name="image_file"
+                accept="image/*">
+        </p>
+    </div>
 
-                    <input
-                        type="file"
-                        name="text_file"
-                        accept=".txt">
+    <!-- VIDEO FILE -->
+    <div class="p-card">
+        <h3>Video File</h3>
+        <p class="p-card__content">
+            <input
+                type="file"
+                name="video_file"
+                accept=".mp4">
+        </p>
+    </div>
 
-                </p>
+    <!-- UPLOAD BUTTON -->
+    <div>
+        <button type="submit">
+            Upload
+        </button>
+    </div>
 
-            </div>
-
-
-            <!-- PDF FILE -->
-
-            <div class="p-card">
-
-                <h3>PDF File</h3>
-
-                <p class="p-card__content">
-
-                    <input
-                        type="file"
-                        name="pdf_file"
-                        accept=".pdf">
-
-                </p>
-
-            </div>
-
-
-            <!-- UPLOAD BUTTON -->
-
-            <div>
-
-                <button type="submit">
-                    Upload
-                </button>
-
-            </div>
-
-        </form>
-
+</form>
     </div>
 
 
