@@ -2,11 +2,6 @@
 
 $upload_directory = getcwd() . '/uploads/';
 
-
-// =========================
-// Handle Text File
-// =========================
-
 if (isset($_FILES['text_file']) &&
     $_FILES['text_file']['error'] === UPLOAD_ERR_OK) {
 
@@ -33,11 +28,6 @@ if (isset($_FILES['text_file']) &&
 
     }
 }
-
-
-// =========================
-// Handle PDF File
-// =========================
 
 if (isset($_FILES['pdf_file']) &&
     $_FILES['pdf_file']['error'] === UPLOAD_ERR_OK) {
@@ -78,9 +68,6 @@ if (isset($_FILES['pdf_file']) &&
     echo '<p>No PDF file was uploaded.</p>';
 
 }
-// =========================
-// Handle Audio File
-// =========================
 
 if (isset($_FILES['audio_file']) &&
     $_FILES['audio_file']['error'] === UPLOAD_ERR_OK) {
