@@ -73,7 +73,9 @@ $options = get_options_for_question_number($current_question_number);
         <?php endforeach; ?>
 
         <!-- Start Quiz button -->
-        <button type="submit" class="button">Submit</button>
+       <button type="submit" class="button is-link" id="startQuiz" disabled>
+    Start Quiz
+</button>
     </form>
 </section>
 
