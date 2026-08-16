@@ -17,7 +17,8 @@ $birthdate = $_POST['birthdate'];
 $contact_number = $_POST['contact_number'];
 $agree = $_POST['agree'];
 $answer = $_POST['answer'] ?? null;
-$answers = $_POST['answers'] ?? null;
+$answers = $_POST['answers'] ?? '';
+
 if (!is_null($answer)) {
     $answers .= $answer;
 }
@@ -73,7 +74,7 @@ $options = get_options_for_question_number($current_question_number);
         <?php endforeach; ?>
 
         <!-- Start Quiz button -->
-       <button type="submit" class="button is-link" id="startQuiz" disabled>
+       <button type="submit" class="button">Submit</button>
     Start Quiz
 </button>
     </form>
