@@ -11,8 +11,8 @@
         This is the IPT10 PHP Quiz Web Application Laboratory Activity. Please register
     </h2>
     <!-- Supply the correct HTTP method and target form handler resource -->
-    <form method="GET" action="pre-instructions.php">
-        <div class="field">
+<form method="POST" action="instructions.php">
+       <div class="field">
             <label class="label">Name</label>
             <div class="control">
                 <input class="input" type="text" name="complete_name" placeholder="Complete Name">
