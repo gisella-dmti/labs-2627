@@ -57,8 +57,7 @@ function get_answer_text($options, $answer_key) {
     <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
 </head>
 <body>
-<section class="hero">
-    <div class="hero-body">
+<section class="hero <?php echo $score > 2 ? 'is-success' : 'is-danger'; ?>">    <div class="hero-body">
         <p class="title">Your Score <?php echo $score; ?></p>
         <p class="subtitle">This is the IPT10 PHP Quiz Web Application Laboratory Activity.</p>
     </div>
@@ -151,15 +150,22 @@ function get_answer_text($options, $answer_key) {
 
     </table>
 </div>
-    <canvas id="confetti-canvas"></canvas>
-</section>
+   <?php if ($score == 5000): ?>
 
-<script>
-var confettiSettings = {
-    target: 'confetti-canvas'
-};
-var confetti = new ConfettiGenerator(confettiSettings);
-confetti.render();
-</script>
+    <canvas id="confetti-canvas"></canvas>
+
+    <script>
+        var confettiSettings = {
+            target: 'confetti-canvas'
+        };
+
+        var confetti = new ConfettiGenerator(confettiSettings);
+
+        confetti.render();
+    </script>
+
+<?php endif; ?>
+</section>
+    
 </body>
 </html>
