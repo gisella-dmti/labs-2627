@@ -3,11 +3,6 @@
 $upload_directory = getcwd() . '/uploads/';
 echo '<pre>';
 
-
-// =========================
-// Handle Text File
-// =========================
-
 if (isset($_FILES['text_file']) &&
     $_FILES['text_file']['error'] === UPLOAD_ERR_OK) {
 
@@ -35,10 +30,6 @@ if (isset($_FILES['text_file']) &&
     }
 }
 
-
-// =========================
-// Handle PDF File
-// =========================
 
 if (isset($_FILES['pdf_file']) &&
     $_FILES['pdf_file']['error'] === UPLOAD_ERR_OK) {
@@ -79,9 +70,6 @@ if (isset($_FILES['pdf_file']) &&
     echo '<p>No PDF file was uploaded.</p>';
 
 }
-// =========================
-// Handle Image File
-// =========================
 
 if (isset($_FILES['image_file']) &&
     $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
@@ -118,9 +106,6 @@ if (isset($_FILES['image_file']) &&
     echo '<p>No image file was uploaded.</p>';
 
 }
-// =========================
-// Handle Video File
-// =========================
 
 if (isset($_FILES['video_file']) &&
     $_FILES['video_file']['error'] === UPLOAD_ERR_OK) {
