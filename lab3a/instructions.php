@@ -4,10 +4,6 @@
 $first_name = explode(' ', trim($complete_name))[0];
 ?>
 
-<div class="notification is-info">
-    Hello <?php echo htmlspecialchars($first_name); ?>, please read the instructions first.
-</div>
-
 // Supply the missing code
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php');
@@ -27,6 +23,11 @@ $contact_number = $_POST['contact_number'];
 </head>
 <body>
 <section class="section">
+    
+    <div class="notification is-info">
+    Hello <?php echo htmlspecialchars($first_name); ?>, please read the instructions first.
+    </div>
+    
     <h1 class="title">Instructions</h1>
     <h2 class="subtitle">
         This is the IPT10 PHP Quiz Web Application Laboratory Activity.
