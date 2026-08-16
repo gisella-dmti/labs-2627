@@ -56,6 +56,15 @@ $contact_number = $_POST['contact_number'];
         <!-- Start Quiz button -->
         <button type="submit" class="button is-link">Start Quiz</button>
     </form>
+    
+    <script>
+    const agree = document.getElementById('agree');
+    const startQuiz = document.getElementById('startQuiz');
+
+    agree.addEventListener('change', function () {
+        startQuiz.disabled = !agree.checked;
+    });
+</script>
 </section>
 
 </body>
