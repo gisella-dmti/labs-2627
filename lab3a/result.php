@@ -68,7 +68,52 @@ $score = compute_score($complete_answers);
             </tbody>
         </table>
     </div>
-    
+    <div class="table-container">
+    <table class="table is-bordered is-hoverable is-fullwidth">
+
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <?php
+            $questions = retrieve_questions();
+            $correct_answers = $questions['answers'];
+
+            foreach ($questions['questions'] as $question_number => $question):
+            ?>
+
+                <tr>
+
+                    <td>
+                        <?php echo $question_number + 1; ?>
+                    </td>
+
+                    <td>
+                        <?php
+                        echo $complete_answers[$question_number] ?: 'No answer';
+                        ?>
+                    </td>
+
+                    <td>
+                        <?php
+                        echo $correct_answers[$question_number] ?? '';
+                        ?>
+                    </td>
+
+                </tr>
+
+            <?php endforeach; ?>
+
+        </tbody>
+
+    </table>
+</div>
     <canvas id="confetti-canvas"></canvas>
 </section>
 
