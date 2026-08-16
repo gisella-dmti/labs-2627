@@ -7,9 +7,6 @@ var_dump($_FILES);
 echo '</pre>';
 exit;
 
-// =========================
-// Handle Text File
-// =========================
 
 if (isset($_FILES['text_file']) &&
     $_FILES['text_file']['error'] === UPLOAD_ERR_OK) {
@@ -38,10 +35,6 @@ if (isset($_FILES['text_file']) &&
     }
 }
 
-
-// =========================
-// Handle PDF File
-// =========================
 
 if (isset($_FILES['pdf_file']) &&
     $_FILES['pdf_file']['error'] === UPLOAD_ERR_OK) {
