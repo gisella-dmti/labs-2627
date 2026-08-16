@@ -90,46 +90,57 @@ function get_answer_text($options, $answer_key) {
             </tbody>
         </table>
     </div>
-    <div class="table-container">
+<div class="table-container">
     <table class="table is-bordered is-hoverable is-fullwidth">
 
-       <thead>
-         <tr>
-            <th>Question</th>
-            <th>Your Answer</th>
-            <th>Correct Answer</th>
-            <th>Result</th>
-        </tr>
-    </thead>
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Your Answer</th>
+                <th>Correct Answer</th>
+                <th>Result</th>
+            </tr>
+        </thead>
 
         <tbody>
 
-            <?php
-            foreach ($questions['questions'] as $question_number => $question):
-            ?>
+            <?php foreach ($questions['questions'] as $question_number => $question): ?>
 
                 <tr>
 
-                   <td>
-            <?php
-            $user_answer = $complete_answers[$question_number] ?? '';
-             $correct_answer = $correct_answers[$question_number] ?? '';
-
-            if ($user_answer !== '' && $user_answer === $correct_answer) {
-                echo 'Correct';
-            } else {
-                 echo 'Incorrect';
-            }
-            ?>
+                    <td>
+                        <?php echo $question_number + 1; ?>
                     </td>
 
-                     <td>
+                    <td>
                         <?php
-                            echo get_answer_text(
+                        echo get_answer_text(
+                            $question['options'],
+                            $complete_answers[$question_number]
+                        );
+                        ?>
+                    </td>
+
+                    <td>
+                        <?php
+                        echo get_answer_text(
                             $question['options'],
                             $correct_answers[$question_number] ?? ''
-                            );
-                          ?>
+                        );
+                        ?>
+                    </td>
+
+                    <td>
+                        <?php
+                        $user_answer = $complete_answers[$question_number] ?? '';
+                        $correct_answer = $correct_answers[$question_number] ?? '';
+
+                        if ($user_answer !== '' && $user_answer === $correct_answer) {
+                            echo 'Correct';
+                        } else {
+                            echo 'Incorrect';
+                        }
+                        ?>
                     </td>
 
                 </tr>
