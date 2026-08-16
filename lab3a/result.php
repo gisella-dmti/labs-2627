@@ -80,7 +80,12 @@ function get_answer_text($options, $answer_key) {
                 </tr>
                 <tr>
                     <td>Birthdate</td>
-                    <td><?php echo $birthdate; ?></td>
+                     <td>
+                        <?php
+                        $formatted_birthdate = date("F d, Y", strtotime($birthdate));
+                        echo $formatted_birthdate;
+                        ?>
+                    </td>
                 </tr>
                 <tr>
                     <td>Contact Number</td>
