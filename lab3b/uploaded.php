@@ -1,7 +1,6 @@
 <?php
 
 $upload_directory = getcwd() . '/uploads/';
-echo '<pre>';
 
 
 // =========================
