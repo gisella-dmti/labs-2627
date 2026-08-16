@@ -1,8 +1,6 @@
 <?php
 # from the $_SERVER global variable, check if the HTTP method used is POST, if its not POST, redirect to the index.php page
 # Reference: https://www.php.net/manual/en/reserved.variables.server.php
-$first_name = explode(' ', trim($complete_name))[0];
-?>
 
 // Supply the missing code
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -14,6 +12,8 @@ $complete_name = $_POST['complete_name'];
 $email = $_POST['email'];
 $birthdate = $_POST['birthdate'];
 $contact_number = $_POST['contact_number'];
+
+$first_name = explode(' ', trim($complete_name))[0];
 ?>
 <html>
 <head>
