@@ -122,4 +122,44 @@ if (isset($_FILES['audio_file']) &&
     echo '<p>No audio file was uploaded.</p>';
 
 }
+
+// =========================
+// Handle Image File
+// =========================
+
+if (isset($_FILES['image_file']) &&
+    $_FILES['image_file']['error'] === UPLOAD_ERR_OK) {
+
+    $uploaded_image_file =
+        $upload_directory . basename($_FILES['image_file']['name']);
+
+    $temporary_image_file =
+        $_FILES['image_file']['tmp_name'];
+
+    if (move_uploaded_file(
+        $temporary_image_file,
+        $uploaded_image_file
+    )) {
+
+        echo '<h2>Image File Uploaded Successfully!</h2>';
+
+        echo '<p>File Name: ' .
+             htmlspecialchars(basename($uploaded_image_file)) .
+             '</p>';
+
+        echo '<img src="uploads/' .
+             urlencode(basename($uploaded_image_file)) .
+             '" alt="Uploaded Image" style="max-width:500px;">';
+
+    } else {
+
+        echo '<p>Failed to upload image file.</p>';
+
+    }
+
+} else {
+
+    echo '<p>No image file was uploaded.</p>';
+
+}
 ?>
