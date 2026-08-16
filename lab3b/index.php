@@ -35,19 +35,33 @@
         <input type="file" name="pdf_file" accept=".pdf" />
     </p>
 </div>
-        <div class="p-card">
+
+<div class="p-card">
     <h3>Image File</h3>
     <p class="p-card__content">
         <input type="file" name="image_file" accept="image/*" />
     </p>
 </div>
-        <div>
-            <button>
-                Upload
-            </button>
-        </div>
-    </form>
-    </div>
+
+<div class="p-card">
+    <h3>Audio File</h3>
+    <p class="p-card__content">
+        <input type="file" name="audio_file" accept=".mp3" />
+    </p>
+</div>
+
+<div class="p-card">
+    <h3>Video File</h3>
+    <p class="p-card__content">
+        <input type="file" name="video_file" accept=".mp4" />
+    </p>
+</div>
+
+<div>
+    <button>
+        Upload
+    </button>
+</div>
   <div class="col">
   <img class="p-logo-section__logo" src="https://www.auf.edu.ph/home/images/mascot/CCS.png" alt="College of Computing Studies">
   </div>
