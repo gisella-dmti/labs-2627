@@ -41,6 +41,12 @@
         <input type="file" name="image_file" accept="image/*" />
     </p>
 </div>
+        <div class="p-card">
+    <h3>Video File</h3>
+    <p class="p-card__content">
+        <input type="file" name="video_file" accept=".mp4" />
+    </p>
+</div>
         <div>
             <button>
                 Upload
