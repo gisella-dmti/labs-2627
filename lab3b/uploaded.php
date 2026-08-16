@@ -57,10 +57,16 @@ if (isset($_FILES['pdf_file']) &&
         echo '<h2>PDF File Uploaded Successfully!</h2>';
 
         echo '<p>File Name: ' .
-             htmlspecialchars(
-                 basename($uploaded_pdf_file)
-             ) .
+             htmlspecialchars(basename($uploaded_pdf_file)) .
              '</p>';
+
+        echo '<p>';
+        echo '<a href="uploads/' .
+             urlencode(basename($uploaded_pdf_file)) .
+             '" target="_blank">';
+        echo 'Open PDF File';
+        echo '</a>';
+        echo '</p>';
 
     } else {
 
