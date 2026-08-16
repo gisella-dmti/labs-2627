@@ -78,5 +78,47 @@ if (isset($_FILES['pdf_file']) &&
     echo '<p>No PDF file was uploaded.</p>';
 
 }
+// =========================
+// Handle Audio File
+// =========================
+
+if (isset($_FILES['audio_file']) &&
+    $_FILES['audio_file']['error'] === UPLOAD_ERR_OK) {
+
+    $uploaded_audio_file =
+        $upload_directory . basename($_FILES['audio_file']['name']);
+
+    $temporary_audio_file =
+        $_FILES['audio_file']['tmp_name'];
+
+    if (move_uploaded_file(
+        $temporary_audio_file,
+        $uploaded_audio_file
+    )) {
+
+        echo '<h2>Audio File Uploaded Successfully!</h2>';
+
+        echo '<p>File Name: ' .
+             htmlspecialchars(basename($uploaded_audio_file)) .
+             '</p>';
+
+        echo '<audio controls>';
+        echo '<source src="uploads/' .
+             urlencode(basename($uploaded_audio_file)) .
+             '" type="audio/mpeg">';
+        echo 'Your browser does not support the audio element.';
+        echo '</audio>';
+
+    } else {
+
+        echo '<p>Failed to upload audio file.</p>';
+
+    }
+
+} else {
+
+    echo '<p>No audio file was uploaded.</p>';
+
+}
 
 ?>
