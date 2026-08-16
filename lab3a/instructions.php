@@ -27,7 +27,7 @@ $contact_number = $_POST['contact_number'];
     </h2>
 
     <!-- Supply the correct HTTP method and target form handler resource -->
-    <form method="POST" action="">
+  <form method="POST" action="quiz.php">
  <input type="hidden" name="complete_name" value="<?php echo $complete_name; ?>" />
  <input type="hidden" name="email" value="<?php echo $email; ?>" />
  <input type="hidden" name="birthdate" value="<?php echo $birthdate; ?>" />
