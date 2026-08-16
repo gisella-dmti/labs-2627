@@ -12,14 +12,19 @@ $email = $_POST['email'];
 $birthdate = $_POST['birthdate'];
 $contact_number = $_POST['contact_number'];
 $agree = $_POST['agree'];
-$answer = $_POST['answer'] ?? null;
-$answers = $_POST['answers'] ?? null;
-if (!is_null($answer)) {
-    $answers .= $answer;
+$answers = $_POST['answers'] ?? [];
+
+// Make sure every question has an answer value
+$complete_answers = [];
+
+for ($i = 0; $i < MAX_QUESTION_NUMBER; $i++) {
+
+    $complete_answers[$i] = $answers[$i] ?? '';
+
 }
 
-// Use the compute_score() function from helpers.php
-// $score = compute_score($answers);
+// Compute the score
+$score = compute_score($complete_answers);
 ?>
 <html>
 <head>
