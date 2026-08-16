@@ -75,7 +75,6 @@ $options = get_options_for_question_number($current_question_number);
 
         <!-- Start Quiz button -->
        <button type="submit" class="button">Submit</button>
-    Start Quiz
 </button>
     </form>
 </section>
